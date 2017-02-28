@@ -5,6 +5,10 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
+    respond_to do |format|
+      format.html
+      format.json { @addresses = Address.search(params[:term]) }
+    end
   end
   def create
     @message = Message.new(message_params)

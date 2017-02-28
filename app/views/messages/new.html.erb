@@ -1,3 +1,9 @@
+<!-- <script>
+  $(document).on("turbolinks:load",function() {
+    alert("WANG CHUNG");
+    new app.Addresses;
+  });
+</script> -->
 <h1>New Message</h1>
 <% if @message.errors.any? %>
   <p>You done fucked up</p>
@@ -6,11 +12,15 @@
 
 <%= form_for @message do |f| %>
   <%= f.label :to %>
-  <%= f.text_field :to, as: :search, data:
-      {autocomplete_source: Address.pluck(:number)}, id: 'to_number' %>
+  <%= f.text_field :to%>
   <%= f.label :from %>
   <%= f.text_field :from %>
   <%= f.label :body %>
   <%= f.text_field :body %>
   <%= f.submit %>
 <% end %>
+
+<!-- <div class="addresses-search">
+  <input type="text" id="addresses-search-txt" autofocus>
+  <div class="results" id="addresses-search-results"></div>
+</div> -->
